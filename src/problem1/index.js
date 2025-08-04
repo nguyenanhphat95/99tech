@@ -1,8 +1,9 @@
 /**
- * Calculates the sum of all integers from 1 to n (inclusive) using a while loop.
- *
- * @param {number} n - The upper bound of the range to sum. Should be a positive integer.
- * @returns {number} The sum of all integers from 1 to n.
+ * Calculates the sum of all integers from 1 to n using a while loop.
+ * Time complexity: O(n).
+ * Space complexity: O(1).
+ * @param {number} n - The target number to sum up to.
+ * @returns {number} - The sum of integers from 1 to `n`.
  */
 const sum_to_n_a = (n) => {
     let result = 0;
@@ -16,9 +17,10 @@ const sum_to_n_a = (n) => {
 
 /**
  * Recursively calculates the sum of all integers from 1 to n.
- *
- * @param {number} n - The positive integer up to which the sum is calculated.
- * @returns {number} The sum of all integers from 1 to n.
+ * Time complexity: O(n).
+ * Space complexity: O(n).
+ * @param {number} n - The target number to sum up to.
+ * @returns {number} - The sum of integers from 1 to `n`.
  */
 const sum_to_n_b = (n) =>{
     if (n === 1) {
@@ -28,11 +30,12 @@ const sum_to_n_b = (n) =>{
 };
 
 /**
- * Calculates the sum of all integers from 1 to n (inclusive).
- *
- * @param {number} n - The upper bound of the range to sum.
- * @returns {number} The sum of all integers from 1 to n.
+ * Using the Mathematical Formula for Summation
+ * Time complexity: O(1).
+ * Space complexity: O(1).
+ * @param {number} n - The target number to sum up to.
+ * @returns {number} - The sum of integers from 1 to `n`.
  */
 const sum_to_n_c = (n) => {
-    return Array.from({ length: n }, (_, index) => index + 1).reduce((result, num) => result + num, 0);
+    return (n * (n + 1)) / 2;
 };
