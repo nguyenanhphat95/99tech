@@ -6,12 +6,10 @@ import {
   FieldWrapper,
   FieldWrapperPassThroughProps,
 } from '@/components/ui/form/field-wrapper';
+import { env } from '@/config/env';
 import { cn } from '@/utils/cn';
 
 import { Currency } from '../types/currency';
-
-const TOKEN_BASE_URL =
-  'https://raw.githubusercontent.com/Switcheo/token-icons/refs/heads/main/tokens';
 
 type SelectFieldProps = FieldWrapperPassThroughProps & {
   isFetching?: boolean;
@@ -63,7 +61,7 @@ export const SelectCurrency = (props: SelectFieldProps) => {
                     <div className="flex items-center">
                       <img
                         alt={`${option.currency} logo`}
-                        src={`${TOKEN_BASE_URL}/${option.currency}.svg`}
+                        src={`${env.TOKEN_BASE_URL}/${option.currency}.svg`}
                         className="mr-2 size-5"
                         onError={(e) => {
                           e.currentTarget.onerror = null;

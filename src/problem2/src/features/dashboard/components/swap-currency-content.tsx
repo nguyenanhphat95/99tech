@@ -99,7 +99,7 @@ export const SwapCurrencyContent = ({
   };
 
   return (
-    <div className="relative rounded-xl bg-white p-8 shadow-md sm:w-[80vw] md:w-[30vw]">
+    <div className="relative rounded-xl bg-white p-8 shadow-md sm:w-[80vw] md:w-[40vw] lg:w-[30vw]">
       {isSubmitting && (
         <div className="absolute inset-0 z-10 flex items-center justify-center bg-gray-200/50">
           <Spinner className="animate-spin" />
