@@ -14,6 +14,7 @@ const TOKEN_BASE_URL =
   'https://raw.githubusercontent.com/Switcheo/token-icons/refs/heads/main/tokens';
 
 type SelectFieldProps = FieldWrapperPassThroughProps & {
+  isFetching?: boolean;
   options: Currency[];
   className?: string;
   defaultValue?: string;
@@ -27,19 +28,19 @@ const selectVariants = cva(
 );
 
 export const SelectCurrency = (props: SelectFieldProps) => {
-  const { label, options, error, value, className, onChange } = props;
+  const { isFetching, label, options, error, value, className, onChange } =
+    props;
 
   return (
     <FieldWrapper label={label} error={error}>
       <Select.Root
         value={value}
+        disabled={isFetching}
         onValueChange={(value) => {
           const selectedCurrency = options.find(
             (option) => option.currency === value,
           );
-          if (selectedCurrency && onChange) {
-            onChange(selectedCurrency);
-          }
+          selectedCurrency && onChange?.(selectedCurrency);
         }}
       >
         <Select.Trigger className={cn(selectVariants(), className)}>

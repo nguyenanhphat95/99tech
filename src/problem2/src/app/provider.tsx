@@ -3,6 +3,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
 
 import { MainErrorFallback } from '@/components/errors/main';
+import { Notifications } from '@/components/ui/notifications';
 import { Spinner } from '@/components/ui/spinner';
 
 type AppProviderProps = {
@@ -19,7 +20,10 @@ export const AppProvider = ({ children }: AppProviderProps) => {
       }
     >
       <ErrorBoundary FallbackComponent={MainErrorFallback}>
-        <HelmetProvider>{children}</HelmetProvider>
+        <HelmetProvider>
+          <Notifications />
+          {children}
+        </HelmetProvider>
       </ErrorBoundary>
     </React.Suspense>
   );
