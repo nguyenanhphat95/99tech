@@ -5,14 +5,14 @@
  * @param {number} n - The target number to sum up to.
  * @returns {number} - The sum of integers from 1 to `n`.
  */
-const sum_to_n_a = (n) => {
-    let result = 0;
-    let i = 1;
-    while (i <= n) {
-        result += i;
-        i++;
-    }
-    return result;
+function sum_to_n_a(n){
+  let result = 0;
+  let i = 1;
+  while (i <= n) {
+      result += i;
+      i++;
+  }
+  return result;
 };
 
 /**
@@ -22,11 +22,11 @@ const sum_to_n_a = (n) => {
  * @param {number} n - The target number to sum up to.
  * @returns {number} - The sum of integers from 1 to `n`.
  */
-const sum_to_n_b = (n) =>{
-    if (n === 1) {
-        return 1
-    };
-    return n + sum_to_n_b(n - 1);
+function sum_to_n_b(n) {
+  if (n === 1) {
+      return 1;
+  }
+  return n + sum_to_n_b(n - 1);
 };
 
 /**
@@ -36,6 +36,12 @@ const sum_to_n_b = (n) =>{
  * @param {number} n - The target number to sum up to.
  * @returns {number} - The sum of integers from 1 to `n`.
  */
-const sum_to_n_c = (n) => {
-    return (n * (n + 1)) / 2;
+function sum_to_n_c(n) {
+  return (n * (n + 1)) / 2;
 };
+
+module.exports = {
+  sum_to_n_a,
+  sum_to_n_b,
+  sum_to_n_c
+}
